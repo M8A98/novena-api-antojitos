@@ -4,8 +4,19 @@
   "description": "Api with Charles",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "standard --fix | snazzy"
   },
   "author": "Mauro Ochoa",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.5",
+    "snazzy": "^8.0.0",
+    "standard": "^14.3.4"
+  }
 }
