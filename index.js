@@ -6,6 +6,7 @@ require('dotenv').config()
 const db = require('./src/lib/db')
 
 const server = require('./src/server')
+const app = require('./src/server')
 
 const { PORT = 3030 } = process.env
 
