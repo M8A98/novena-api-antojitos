@@ -3,12 +3,15 @@
 const express = require('express')
 
 const tacosRouter = require('./routes/tacos')
+const authRouter = require('./routes/auth') 
 
 const app = express()
 
 app.use(express.json())
 
 app.use('/tacos', tacosRouter)
+
+app.use('/auth',authRouter)
 
 app.get('/', (request, response) => {
   response.json({

@@ -2,6 +2,9 @@ const express = require('express')
 const tacos = require('../usecases/tacos')
 const router = express.Router()
 // el router le pertenece a tacos. Ya no necesitamos poner tacos al principio.
+
+const auth = require('../middlewares/auth')
+// router.use(auth) para todas las rutas
 router.get('/', async (request, response) => {
   try {
     const allTacos = await tacos.getAll()
@@ -22,7 +25,7 @@ router.get('/', async (request, response) => {
   }
 })
 
-router.post('/', async (request, response) => {
+router.post('/', auth, async (request, response) => {
   try {
     const {
       type,
